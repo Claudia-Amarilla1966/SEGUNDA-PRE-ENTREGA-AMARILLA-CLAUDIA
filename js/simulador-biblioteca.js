@@ -361,7 +361,7 @@ function actualizarEstadisticas() {
             </div>
             <div class = "separador-estadistica"></div>
             <div class = "bloque-estadistica">
-                <p class = "titulo-estadistica">Préstamos Activos</p>
+                <p class = "titulo-estadistica">Préstamos activos</p>
                 <p class = "numero-estadistica">${activos}</p>
                 </div>
             
