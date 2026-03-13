@@ -1,0 +1,24 @@
+{
+    "libros": [
+        { "id": 1, "titulo": "El Quijote", "autor": "Miguel de Cervantes", "categoria": "Novela", "valorMultaPorDia": 500 },
+        { "id": 2, "titulo": "Cien Años de Soledad", "autor": "Gabriel García Márquez", "categoria": "Novela", "valorMultaPorDia": 400 },
+        { "id": 3, "titulo": "La Sombra del Viento", "autor": "Carlos Ruiz Zafón", "categoria": "Novela", "valorMultaPorDia": 300 },
+        { "id": 4, "titulo": "El Principito", "autor": "Antoine de Saint-Exupéry", "categoria": "Infantil", "valorMultaPorDia": 200 },
+        { "id": 5, "titulo": "Harry Potter y la Piedra Filosofal", "autor": "J.K. Rowling", "categoria": "Infantil", "valorMultaPorDia": 250 },
+        { "id": 6, "titulo": "El Código Da Vinci", "autor": "Dan Brown", "categoria": "Misterio", "valorMultaPorDia": 350 },
+        { "id": 7, "titulo": "La Casa de los Espíritus", "autor": "Isabel Allende", "categoria": "Novela", "valorMultaPorDia": 450 },
+        { "id": 8, "titulo": "El Alquimista", "autor": "Paulo Coelho", "categoria": "Novela", "valorMultaPorDia": 300 },
+        { "id": 9, "titulo": "Don Juan Tenorio", "autor": "José Zorrilla", "categoria": "Teatro", "valorMultaPorDia": 150 },
+        { "id": 10, "titulo": "El Hobbit", "autor": "J.R.R. Tolkien", "categoria": "Fantasía", "valorMultaPorDia": 400 },
+        { "id": 11, "titulo": "Moby Dick", "autor": "Herman Melville", "categoria": "Novela", "valorMultaPorDia": 350 },
+        { "id": 12, "titulo": "La Divina Comedia", "autor": "Dante Alighieri", "categoria": "Poesía", "valorMultaPorDia": 450 },
+        { "id": 13, "titulo": "El Retrato de Dorian Gray", "autor": "Oscar Wilde", "categoria": "Novela", "valorMultaPorDia": 300 },
+        { "id": 14, "titulo": "Cumbres Borrascosas", "autor": "Emily Brontë", "categoria": "Novela", "valorMultaPorDia": 350 },
+        { "id": 15, "titulo": "El Gran Gatsby", "autor": "F. Scott Fitzgerald", "categoria": "Novela", "valorMultaPorDia": 400 },
+        { "id": 16, "titulo": "La Metamorfosis", "autor": "Franz Kafka", "categoria": "Novela", "valorMultaPorDia": 250 },
+        { "id": 17, "titulo": "El Viejo y el Mar", "autor": "Ernest Hemingway", "categoria": "Novela", "valorMultaPorDia": 300 },
+        { "id": 18, "titulo": "La Odisea", "autor": "Homero", "categoria": "Épica", "valorMultaPorDia": 450 },
+        { "id": 19, "titulo": "El Amor en los Tiempos del Cólera", "autor": "Gabriel García Márquez", "categoria": "Novela", "valorMultaPorDia": 400 },
+        { "id": 20, "titulo": "Rayuela", "autor": "Julio Cortázar", "categoria": "Novela", "valorMultaPorDia": 500 }
+    ]
+}

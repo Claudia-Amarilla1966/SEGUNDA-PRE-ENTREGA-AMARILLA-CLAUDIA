@@ -1,0 +1,587 @@
+/* VARIABLES DE COLORES */
+:root{
+    --color-principal: #f7df1e;
+    --color-fondo: #121212;
+    --color-panel: #1a1a1a;
+    --color-texto: #e0e0e0;
+    --color-texto-secundario: #aaa;
+    --color-borde: #333;
+
+}
+
+/* LAYOUT */
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 0; 
+    font-family: 'Georgia', serif;
+}
+
+.tapa {
+    background-color: var(--color-panel); 
+    width: 480px; 
+    display: flex;
+    align-items: stretch; 
+    box-shadow: 20px 20px 45px rgba(0,0,0,0.6),0 0 2px rgba(255,255,255,0.05); 
+
+    border-radius: 4px 15px 15px 4px;
+    color: var(--color-texto);
+    overflow: hidden;
+    border: 1px solid var(--color-borde);
+    transform: scale(0.95); 
+    transform-origin: center;
+    position: relative;
+}
+
+.tapa::before{
+    content: "";
+    position: absolute;
+    left:  35px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    
+}
+
+.lomo {
+    width: 35px;
+    background: linear-gradient(to right, #000, #222, #000);
+    border-right: 1px solid rgba(255,255,255,0.05);
+    flex-shrink: 0;
+    box-shadow: inset -4px 0 6px rgba(0,0,0,0.6);
+}
+
+.cuerpo {
+    flex: 1;
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TITULO DEL LIBRO */
+
+.titulo-serie {
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    color: var(--color-principal); 
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: normal;
+    line-height: 1.1;
+    color: #fff;
+}
+
+h1 span {
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 5px;
+    font-family: 'Arial', sans-serif;
+    color: #888;
+}
+
+.divisor {
+    height: 3px;
+    background-color: var(--color-principal);
+    width: 50px;
+    margin: 12px 0;
+}
+
+.info-curso {
+    margin-bottom: 10px;
+}
+
+.grupo-dato {
+    margin-bottom: 10px;
+}
+
+.etiqueta {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: #666;
+    display: block;
+    margin-bottom: 2px;
+    width: 110Px;
+    flex-shrink: 0;
+}
+
+.valor {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
+    margin: 0;
+    color: #ccc;
+}
+
+/* BOTONERA */
+.botonera {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.btn-accion {
+    background-color: transparent;
+    border: 1px solid var(--color-principal);
+    color: var(--color-principal);
+    padding: 8px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.8rem;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-accion:hover {
+    background-color: var(--color-principal);
+    color: var(--color-panel);
+}
+
+.seccion-historial {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03); 
+    border-left: 2px solid var(--color-principal);
+}
+
+/* VISOR */
+.visor {
+    background: rgba(247, 223, 30, 0.05);
+    border: 1px solid var(--color-principal);
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 10px;
+    min-height: 150px;
+    font-family: 'Arial', sans-serif;
+    color:var(--color-principal);
+    max-height: 300px;
+    overflow-y: auto;
+    line-height: 1.6;
+}
+
+.visor.estadisticas {
+    min-height: 60px;
+    max-height: 150px;
+}
+
+/* .visor strong {
+    color:var(--color-principal); 
+} */
+
+.visor .exito,
+.visor .error {
+    color: var(--color-principal);  
+    font-weight: bold;
+    border-left: 3px solid var(--color-principal);
+    padding-left: 10px;
+}
+
+.mensaje {
+    font-size: 0.75rem;
+    font-style: italic;
+    font-family: Arial,  sans-serif;
+    line-height: 1.4;
+    color: var(--color-texto-secundario);
+    margin: 0;
+}
+
+/*  ESTILO PARA EL INPUT  */
+input[type="number"]:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(247, 223, 30, 0.3);
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    opacity: 0.5;
+}
+
+/* BOTÓN CONFIRMAR DESTACADO  */
+.btn-accion[style*="width: auto"] {
+    background-color: transparent;
+    border: 2px solid var(--color-principal);
+    color: var(--color-principal);
+    font-weight: bold;
+}
+
+.btn-accion[style*="width: auto"]:hover {
+    background-color:var(--color-principal) ;
+    color: var(--color-panel);
+}
+/* INFORMACIÓN DE LA AUTORA  */
+.info-autora {
+    border-top: 1px solid var(--color-principal);
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-top: auto; 
+}
+
+.nombre-autora {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.lema {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--color-principal);
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+}
+
+/* ==================================== */
+
+/* BLOQUES DEL VISOR  */
+
+.bloque-panel{
+    border-left: 3px solid var(--color-principal);
+    padding-left: 15px;
+}
+
+.visor-bloque{
+    margin-bottom: 20px;
+}
+
+.bloque-mensaje{
+    margin-top: 5px;
+}
+
+/* TITULOS*/
+
+.titulo-seccion,
+.titulo-confirmacion{
+    color: var(--color-principal);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.titulo-seccion{
+    margin: 0;
+}
+
+.titulo-confirmacion{
+    margin-bottom: 15px;
+}
+
+.titulo-aviso{
+    color: #666;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/*  LISTA DE LIBROS */
+
+.linea-libro{
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.numero-libro{
+    color: var(--color-principal);
+    font-size: 0.85rem;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.titulo-libro{
+    color: var(--color-texto-secundario);
+    letter-spacing: 0.8px;
+    font-size: 0.80rem;
+}
+
+.detalle-libro{
+    margin-left: 35px;
+    font-size: 0.80rem;
+    color: var(--color-texto-secundario);
+    margin-top: 4px;
+    
+}
+
+/*  COLORES DE TEXTO  */
+
+.precio,
+.mora,
+.resaltado{
+    color: var(--color-principal);
+}
+
+.mora{
+    opacity: 0.8;
+    font-size: 0.80rem;
+}
+
+.texto-aviso{
+    color: #888;
+}
+
+.texto-mensaje{
+    line-height: 1.9;
+    color: var(--color-texto-secundario);
+}
+
+.texto-valor{
+    color: var(--color-texto);
+}
+
+/* BLOQUES DE INFORMACION  */
+
+.linea-info{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+
+.bloque-datos{
+    line-height: 1.8;
+    color: var(--color-texto);
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/*  NOTAS*/
+
+.texto-ayuda{
+    font-size: 0.85rem;
+    color: var(--color-texto-secundario);
+    font-style: italic;
+    margin-top: 20px;
+    border-top: 1px solid var(--color-borde);
+    padding-top: 10px;
+}
+
+.nota-final{
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: var(--color-texto);
+    font-style: italic;
+    border-top: 1px solid var(--color-borde);
+    padding-top: 10px;
+    
+}
+
+/*  HISTORIAL*/
+
+.historial-item{
+    border-bottom: 1px solid #222;
+    padding: 15px 0;
+}
+
+.historial-linea{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.historial-fecha{
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 8px;
+    font-family: monospace;
+}
+
+/*  BADGE ESTADO  */
+
+.badge-estado{
+    font-size: 0.6rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.badge-activo{
+    background-color: #ae9a07;
+    color: #000 !important
+}
+
+.badge-devuelto{
+    background-color: #222;
+    color: #888;
+    border: 1px solid #444;
+}
+
+/* MULTAS  */
+
+.multa-item{
+    border-bottom: 1px solid var(--color-borde);
+    padding: 10px 0;
+}
+
+.estado-multa{
+    font-size: 0.85rem;
+}
+
+.multa-ok{
+    color: var(--color-principal);
+}
+
+.multa-atrasada{
+    color: #ff4444;
+}
+
+/* ESTADISTICAS  */
+
+.panel-estadisticas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.bloque-estadistica{
+    text-align: center;
+    flex: 1;
+}
+
+.titulo-estadistica{
+    margin: 0;
+    color: #666;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.numero-estadistica{
+    margin: 5px 0 0 0;
+    color: var(--color-principal);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.separador-estadistica{
+    border-left: 1px solid var(--color-borde);
+    height: 25px;
+}
+
+/* BIENVENIDA */
+
+.panel-bienvenida{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.linea-decorativa{
+    width: 30px;
+    height: 1px;
+    background-color: var(--color-principal);
+    opacity: 0.5;
+    margin: 15px 0;
+}
+
+.titulo-biblioteca{
+    color: var(--color-principal);
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 0;
+    font-weight: bold;
+}
+
+.titulo-panel{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin: 15px 0;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
+.texto-bienvenida{
+    color: #666;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* ===== EFECTO APARICIÓN VISOR ===== */
+
+@keyframes aparecerVisor{
+    from{
+        opacity:0;
+        transform: translateY(5px);
+    }
+    to{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+#visorResultados{
+    animation: aparecerVisor 0.35s ease;
+    overflow-y:auto;
+    transition: all 0.3s ease;
+}
+
+
+#visorResultados::-webkit-scrollbar{
+    width:6px;
+}
+
+#visorResultados::-webkit-scrollbar-track{
+    background:#111;
+}
+
+#visorResultados::-webkit-scrollbar-thumb{
+    background:#444;
+    border-radius:4px;
+}
+
+.item-resultado{
+    border-bottom: 1px solid var(--color-borde);
+    padding: 12px 0;
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    color: var(--color-texto);
+    transition: background 0.2s ease;
+}
+
+.item-resultado:hover{
+    background:#2020205c;
+}
+
+
+/* ===== TITULOS DE AVISO SUAVES ===== */
+
+.titulo-aviso-suave{
+    color: #888;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 500;
+    border-bottom: 1px solid #222;
+    padding-bottom: 4px;
+}

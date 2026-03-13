@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca del Lector - Claudia Amarilla</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="imagen/javascript-logo-svgrepo-com.svg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="tapa">
+        <div class="lomo"></div>
+        <div class="cuerpo">
+
+            <header>
+                <p class="titulo-serie">Sistema de Gestión Bibliotecaria</p>
+                <h1>BIBLIOTECA <br> DEL LECTOR <span>Préstamos y Multas</span></h1>
+            </header>
+
+            <div class="divisor"></div>
+
+            <section class="info-curso">
+                <div class="grupo-dato">
+                    <span class="etiqueta">COMISIÓN</span>
+                    <p class="valor" id="numComision">89570</p>
+                </div>
+
+                <div class="grupo-dato">
+                    <span class="etiqueta">LECTOR</span>
+                    <p class="valor" id="nombreLector">Claudia Amarilla</p>
+                </div>
+
+                <div class="grupo-dato">
+                    <span class="etiqueta">MEMBRESÍA</span>
+                    <p class="valor" id="tipoMembresia">Premiun</p>
+                </div>
+
+                <div class="grupo-dato">
+                    <span class="etiqueta">ACCIONES</span>
+                    <div class="botonera">
+                        <button  class="btn-accion" data-accion="ver">VER DISPONIBLES</button>
+                        <button  class="btn-accion" data-accion="devolver">DEVOLVER LIBRO</button>
+                        <button class="btn-accion" data-accion="historial">HISTORIAL DEL MES</button>
+                        <button  class="btn-accion" data-accion="multas">CONSULTAR MULTAS</button>
+                    </div>
+                </div>
+
+                <div class="grupo-dato">
+                    <span class="etiqueta">SELECCIONAR LIBRO</span>
+                    <div style="display: flex; gap: 10px; margin-top: 5px;">
+                        <input type="number" id="inputNumeroLibro" min="1" max="22" placeholder="N° del libro (1-20)"
+                            style="flex: 1; padding: 8px; background: #333; color: #f7df1e; border: 1px solid #f7df1e; border-radius: 4px;">
+                        <button  class="btn-accion" data-accion="confirmar" style=" width: auto;"> CONFIRMAR</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="seccion-historial">
+                <span class="etiqueta">VISOR DE RESULTADOS</span>
+                <div id="visorResultados" class="visor">
+                </div>
+            </div>
+
+            <div class="seccion-historial" style="margin-top: 10px;">
+                <span class="etiqueta">ESTADÍSTICAS DEL MES</span>
+                <div id="visorEstadisticas" class="visor estadisticas">
+                    <p class="mensaje">Cargando estadísticas...</p>
+                </div>
+            </div>
+
+            <footer class="info-autora">
+                <p class="nombre-autora" id="nombreAlumna">Claudia Amarilla</p>
+                <p class="lema" id="esloganAlumna">"Transformando ideas en funciones."</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./js/simulador-biblioteca.js"></script> 
+
+</body>
+
+</html>
