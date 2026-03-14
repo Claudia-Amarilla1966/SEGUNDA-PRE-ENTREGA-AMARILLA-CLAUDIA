@@ -73,18 +73,35 @@ let catalogoLibros = DATOS_INICIALES.libros.map(libroJSON =>
 // Array donde se almacenan todos los préstamos realizados.
 let prestamos = [];
 
-//// DATOS DE PRUEBA PARA TESTEAR EL SISTEMA DE MULTAS
-// (Se pueden activar durante el desarrollo).
-        // 👇       
-// if (prestamos.length === 0) {
-// prestamos.push({
-//     tituloLibro: "Libro de prueba",
-//     fechaRetiro: "01/11/2025",
-//     estado:"activo",
-//     valorLibro: 2000
-// });
-// }
+// ============================================================================================
+// DATOS DE PRUEBA - VERIFICACIÓN DE MULTAS
 
+// Dejo este préstamo viejo a propósito para que se pueda probar la función de cálculo de multas. Al hacer click en "CONSULTAR MULTAS" se verá este préstamo con su multa correspondiente, y así se podrá comprobar que el sistema calcula multas correctamente.
+// Uso el primer libro del catálogo (El Quijote)
+// Creo un préstamo como cualquier otro del sistema
+// Le cambio la fecha para simular un préstamo viejo
+// Lo agrego al array de préstamos
+//             PROBAR descomentar 👇 
+
+// if (prestamos.length === 0) {
+    
+//     const libroPrueba = catalogoLibros[0];
+    
+    
+//     const prestamoPrueba = new Prestamo(
+//         libroPrueba.id,
+//         libroPrueba.titulo,
+//         libroPrueba.autor,
+//         libroPrueba.valorMultaPorDia  // $500 (precio del libro)
+//     );
+    
+    
+//     prestamoPrueba.fechaRetiro = "01/11/2025";
+    
+    
+//     prestamos.push(prestamoPrueba);
+// }
+// ============================================================
 
 // PERSISTENCIA (Sincronización y Carga)
 
@@ -158,7 +175,9 @@ function retirarLibro() {
                     </span>
                 <span class = "titulo-libro">${libro.titulo.toUpperCase()}</span>
             </div>
-            <div class = "detalle-libro">Costo :<strong class = "precio"> $${libro.valorMultaPorDia}</strong> | 
+            <div class = "detalle-libro">
+            <span class = "autor-libro">${libro.autor}</span><br> 
+            Costo :<strong class = "precio"> $${libro.valorMultaPorDia}</strong> | 
                 Mora: <span class = "mora"> $${moraReferencia}/día</span> </div>
             </div>`;
     });
@@ -332,9 +351,13 @@ function verHistorialMensual() {
         return `
         <div class = "item-resultado historial-item">
         <div class = "historial-linea">
+            <span class="numero-libro">${p.idLibro.toString().padStart(2, '0')}</span>
             <span class = "titulo-libro">${p.tituloLibro.toUpperCase()}</span>
             <span class = "badge-estado ${estadoClase}">${p.estado}</span>
         </div>
+        <div class="detalle-libro">
+                <span class="autor-libro">${p.autorLibro}</span>
+            </div>
         <div class = "historial-fecha">RETIRO: ${p.fechaRetiro} | DEV: ${p.fechaDevolucionReal || 'PENDIENTE'}</div>
         </div>`
 
@@ -404,16 +427,19 @@ function verMultasPendientes() {
         const claseMulta = multaActual > 0 ? "multa-atrasada" : "multa-ok";
 
         contenidoMultas += ` 
-        <div class = "item-resultado multa-item">
-            <p class = "titulo-libro">
-                <strong>${p.tituloLibro}</strong></p>
-            
-            <p class = "detalle-libro">Días transcurridos: ${diasTranscurridos} / 14 permitidos.</p>
-                
-            <p class = "estado-multa ${claseMulta}">Multa acumulada: <strong>$${multaActual.toFixed(2)}</strong></p>
-                
+        <div class="item-resultado multa-item">
+            <div class="historial-linea">
+                <span class="numero-libro">${p.idLibro.toString().padStart(2, '0')}</span>
+                <span class="titulo-libro"><strong>${p.tituloLibro}</strong></span>
+            </div>
+            <div class="detalle-libro">
+                <span class="autor-libro">${p.autorLibro}</span>
+            </div>
+            <p class="detalle-libro">Días transcurridos: ${diasTranscurridos} / 14 permitidos.</p>
+            <p class="estado-multa ${claseMulta}">Multa acumulada: <strong>$${multaActual.toFixed(2)}</strong></p>
         </div>`;
     });
+    
     mostrarEnVisor(contenidoMultas);
 }
 

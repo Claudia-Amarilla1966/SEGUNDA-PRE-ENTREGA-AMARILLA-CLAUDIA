@@ -523,7 +523,7 @@ input[type="number"]::-webkit-inner-spin-button {
     text-align: center;
 }
 
-/* ===== EFECTO APARICIÓN VISOR ===== */
+/*  EFECTO APARICIÓN VISOR  */
 
 @keyframes aparecerVisor{
     from{
@@ -573,7 +573,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 
-/* ===== TITULOS DE AVISO SUAVES ===== */
+/* TITULOS DE AVISO SUAVES  */
 
 .titulo-aviso-suave{
     color: #888;
@@ -584,4 +584,12 @@ input[type="number"]::-webkit-inner-spin-button {
     font-weight: 500;
     border-bottom: 1px solid #222;
     padding-bottom: 4px;
+}
+
+.autor-libro {
+    color: var(--color-texto-secundario);
+    font-size: 0.75rem;
+    font-style: italic;
+    display: block;
+    margin-bottom: 4px;
 }
